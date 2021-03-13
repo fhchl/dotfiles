@@ -1,0 +1,18 @@
+" Comment toggler for Reddit and Hacker News
+bind ;c hint -c [class*="expand"],[class="togg"]
+
+" Allow Ctrl-a to select all in the commandline
+unbind --mode=ex <C-a>
+
+" Allow Ctrl-c to copy in the commandline
+unbind --mode=ex <C-c>
+
+" Handy multiwindow/multitasking binds
+bind gd tabdetach
+bind gD composite tabduplicate | tabdetach
+
+" Blacklist
+autocmd DocStart ^http(s?)://localhost:8888/lab mode ignore
+autocmd DocStart ^http(s?)://localhost:8888/notebook mode ignore
+
+set smoothscroll true
