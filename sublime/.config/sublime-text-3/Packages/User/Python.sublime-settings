@@ -1,0 +1,17 @@
+{
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".",
+			"selector": "source.python"
+		}
+	],
+	"extensions":
+	[
+	],
+	"rulers":
+	[
+		79
+	],
+	"translate_tabs_to_spaces": true
+}

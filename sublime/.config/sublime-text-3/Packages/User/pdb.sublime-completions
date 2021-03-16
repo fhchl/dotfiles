@@ -1,0 +1,11 @@
+{
+	"scope": "source.python",
+	"completions":
+		[
+			{"trigger": "pdb", "contents": "import pdb; pdb.set_trace()"},
+			{"trigger": "pdb", "contents": "import ipdb; ipdb.set_trace()"},
+			{
+				"trigger": "pdb", 
+			    "contents": "import IPython.core.debugger as d; d.set_trace()"}
+		]
+}

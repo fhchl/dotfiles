@@ -1,0 +1,10 @@
+{
+    //On Windows try "markmon.cmd" if you get errors.
+    //If markmon is not on your path you'll need to use a full path to it
+    "executable": "C:\\Users\\fmheu\\AppData\\Roaming\\npm\\markmon.cmd",
+    "port": 8888,
+    "pandoc_path": "C:\\Users\\fmheu\\AppData\\Local\\Pandoc\\pandoc",
+    "command": "pandoc -t HTML5 --mathjax", //--filter=pandoc-crossref --filter=pandoc-citeproc --metadata=link-citations:true --metadata=lang:en-US",
+    "stylesheet": null,
+    "projectdir": null
+}

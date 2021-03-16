@@ -1,0 +1,11 @@
+{
+	"extensions":
+	[
+	],
+	"rulers":
+	[
+		80
+	],
+	"wrap_width": 80,
+	"draw_centered": true,
+}

@@ -1,0 +1,65 @@
+{
+	"added_words":
+	[
+		"Tikhonov",
+		"subwoofer",
+		"subwoofers",
+		"untargeted",
+		"Ambisonics",
+		"preconvolved",
+		"hyperparameters",
+		"distributionally",
+		"online",
+		"multizone",
+		"maxima",
+		"beamforming",
+		"infeasibility"
+	],
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "<",
+			"selector": "text.html"
+		},
+		{
+			"characters": "\\",
+			"selector": "text.tex.latex"
+		}
+	],
+	"close_windows_when_empty": false,
+	"dictionary": "Packages/Dictionaries/German_de_DE.dic",
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"font_size": 11,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"citebibtex",
+		"ColorPicker",
+		"CSS",
+		"Highlight Dodgy Chars",
+		"Jedi - Python autocompletion",
+		"LaTeXSmartQuotes",
+		"Markdown",
+		"Markdown Extended",
+		"SublimeLinter-chktex",
+		"SublimeLinter-flake8",
+		"SublimeLinter-pydocstyle",
+		"Unicode Character Highlighter",
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"isort.sort_on_save": false,
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"show_line_endings": true,
+	"theme": "Default.sublime-theme",
+	"trim_trailing_white_space_on_save": true
+}
