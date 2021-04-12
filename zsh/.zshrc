@@ -1,14 +1,8 @@
 export LANG=en_US.UTF-8
-export EDITOR='/usr/bin/subl -w'
-export VISUAL='/usr/bin/subl -w'
+export EDITOR='/usr/bin/nvim'
+export VISUAL='/usr/bin/code -w'
 export ZSH=$HOME/.oh-my-zsh
 export BUP_DIR=/media/M/Backup/bup-ubuntu
-
-export PATH=$HOME/miniconda/bin:$PATH
-export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
-export PATH="$HOME/.emacs.d/bin:$PATH"
-export MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -67,15 +61,10 @@ alias ll='ls -lhF'
 alias ls='ls --color=tty -F'
 alias lsa='ls -lahF'
 
-alias rsync_tmbackup=$HOME/GitHub/rsync-time-backup/rsync_tmbackup.sh
-
-# git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9
-
+alias dotfiles='cd ~/dotfiles'
 alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=30:outfmt=yuy2'
-
 # for tlmgr
 alias psudo='sudo env PATH="$PATH"'
-
 
 # # modified "fishy" prompt
 # # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme
