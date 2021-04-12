@@ -1,0 +1,11 @@
+{
+      // full path and command to run black
+      "black_command": "~/miniconda/bin/black",
+
+      // run black before saving document
+      "on_save": false,
+
+      // line length
+      // uses black default, if not modified
+      "line-length": 88
+}

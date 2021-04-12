@@ -1,0 +1,8 @@
+{
+	"extensions":
+	[
+		"pyx",
+		"pxd"
+	],
+	"translate_tabs_to_spaces": true,
+}

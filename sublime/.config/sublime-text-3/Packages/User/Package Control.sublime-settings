@@ -1,0 +1,64 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"ColorPicker"
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Anaconda",
+		"AutoDocstring",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"ColorPicker",
+		"Compare Side-By-Side",
+		"Conda",
+		"CSS Format",
+		"CSS3",
+		"Cython+",
+		"Dockerfile Syntax Highlighting",
+		"Dotfiles Syntax Highlighting",
+		"EditorConfig",
+		"FileIcons",
+		"GitSavvy",
+		"Highlight Dodgy Chars",
+		"isort",
+		"Jedi - Python autocompletion",
+		"LaTeX-cwl",
+		"LaTeXSmartQuotes",
+		"LaTeXTools",
+		"LaTeXYZ",
+		"MagicPython",
+		"Markdown Extended",
+		"MarkdownEditing",
+		"MarkdownPreview",
+		"Package Control",
+		"PackageResourceViewer",
+		"PlainTasks",
+		"ProjectManager",
+		"Python Breakpoints",
+		"SideBarEnhancements",
+		"sublack",
+		"sublime_zk",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
+		"SublimeLinter-chktex",
+		"SublimeLinter-clang",
+		"SublimeLinter-cppcheck",
+		"SublimeLinter-flake8",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-pydocstyle",
+		"sublimetext-Pandoc",
+		"Terminal",
+		"TodoReview",
+		"TodoTxt Syntax",
+		"Unicode Character Highlighter",
+		"WordCount"
+	],
+	"repositories":
+	[
+		"https://github.com/tbfisher/sublimetext-Pandoc.git",
+		"https://github.com/renerocksai/sublime_zk"
+	]
+}

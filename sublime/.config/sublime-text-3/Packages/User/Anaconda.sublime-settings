@@ -1,0 +1,15 @@
+{
+	"anaconda_linter_mark_style": "none",
+	"complete_parameters": false,
+    "complete_all_parameters": false,
+    "parameters_completion_on_keypress": true,
+	"pep257": false,
+	"anaconda_gutter_theme": "simple",
+    "anaconda_linting": true,
+	"pep257_ignore":
+	    [
+	        "D203",
+	        "D209",
+	        "D213" // Multi-line docstring summary should start at the second line
+	    ],
+}

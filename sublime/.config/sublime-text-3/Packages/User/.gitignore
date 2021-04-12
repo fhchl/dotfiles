@@ -1,0 +1,8 @@
+*
+!.gitignore
+!*.sublime-settings
+!*.sublime-snippet
+!*.sublime-build
+!*.sublime-keymap
+!*.sublime-completions
+

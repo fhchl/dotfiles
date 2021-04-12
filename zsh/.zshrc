@@ -1,8 +1,13 @@
 export LANG=en_US.UTF-8
-export EDITOR='/usr/bin/nvim'
+export EDITOR='/usr/bin/nvim -w'
 export VISUAL='/usr/bin/code -w'
 export ZSH=$HOME/.oh-my-zsh
 export BUP_DIR=/media/M/Backup/bup-ubuntu
+
+export PATH=$HOME/miniconda/bin:$PATH
+export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

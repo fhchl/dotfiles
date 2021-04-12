@@ -1,0 +1,32 @@
+[
+	{
+		"keys": ["ctrl+alt+o"],
+	    "command": "project_manager",
+	    "args": {"action": "new"}
+	},
+	{
+		"keys": ["alt+c"],
+		"command": "toggle_comment",
+		"args": { "block": false }
+	},
+	{
+		"keys": ["alt+shift+c"],
+		"command": "toggle_comment",
+		"args": { "block": true }
+	},
+	{
+		"keys": ["alt+m"],
+		"command": "markdown_preview",
+		"args": {"target": "browser", "parser":"markdown"}
+	},
+	{
+		"keys": ["ctrl+'"],
+		"command": "show_panel",
+		"args": {"panel": "console", "toggle": true}
+	},
+    {
+        "keys": ["ctrl+shift+["],
+        "command": "gs_inline_diff",
+    },
+
+]

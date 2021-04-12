@@ -1,0 +1,19 @@
+{
+	"clients":
+	{
+		"pyls":
+		{
+			"command": ["~/miniconda3/bin/pyls"],
+			"enabled": true,
+			"syntaxes": ["Packages/Python/Python.sublime-syntax", "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage", "Packages/MagicPython/grammars/MagicPython.tmLanguage"],
+			"pyls.plugins.pydocstyle.enabled": true
+		}
+	},
+
+	// Open and close the diagnostics panel automatically,
+  	// depending on available diagnostics.
+  	"auto_show_diagnostics_panel": false,
+
+  	// Show errors and warnings count in the status bar
+  	"show_diagnostics_count_in_view_status": true,
+}
