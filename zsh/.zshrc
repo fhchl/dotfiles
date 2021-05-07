@@ -6,6 +6,7 @@ export BUP_DIR=/media/M/Backup/bup-ubuntu
 
 export PATH=$HOME/miniconda/bin:$PATH
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
+export PATH=$HOME/.local/bin # julia
 export MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH
 

@@ -126,3 +126,5 @@ export INFOPATH="~/software/texlive/2019/texmf-dist/doc/info:$INFOPATH"
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 export VISUAL='subl -w'
+# added by jill
+export PATH=/home/fhchl/.local/bin:$PATH
