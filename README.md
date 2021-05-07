@@ -21,5 +21,3 @@ For sublime
 Check ignored files
 
     git status --ignored
-
-

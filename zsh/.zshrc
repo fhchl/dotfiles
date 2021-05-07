@@ -67,15 +67,10 @@ alias ll='ls -lhF'
 alias ls='ls --color=tty -F'
 alias lsa='ls -lahF'
 
-alias rsync_tmbackup=$HOME/GitHub/rsync-time-backup/rsync_tmbackup.sh
-
-# git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9
-
+alias dotfiles='cd ~/dotfiles'
 alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=30:outfmt=yuy2'
-
 # for tlmgr
 alias psudo='sudo env PATH="$PATH"'
-
 
 # # modified "fishy" prompt
 # # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme
