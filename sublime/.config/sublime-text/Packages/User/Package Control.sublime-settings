@@ -2,7 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"ColorPicker"
 	],
 	"installed_packages":
 	[
@@ -25,6 +24,7 @@
 		"Highlight Dodgy Chars",
 		"isort",
 		"Jedi - Python autocompletion",
+		"Julia",
 		"LaTeX-cwl",
 		"LaTeXSmartQuotes",
 		"LaTeXTools",
@@ -54,11 +54,11 @@
 		"TodoReview",
 		"TodoTxt Syntax",
 		"Unicode Character Highlighter",
-		"WordCount"
+		"WordCount",
 	],
 	"repositories":
 	[
 		"https://github.com/tbfisher/sublimetext-Pandoc.git",
 		"https://github.com/renerocksai/sublime_zk"
-	]
+	],
 }

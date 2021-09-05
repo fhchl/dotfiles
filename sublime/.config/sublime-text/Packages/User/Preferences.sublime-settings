@@ -13,43 +13,45 @@
 		"multizone",
 		"maxima",
 		"beamforming",
-		"infeasibility"
+		"infeasibility",
+		"directivity",
 	],
 	"auto_complete_triggers":
 	[
 		{
 			"characters": "<",
-			"selector": "text.html"
+			"selector": "text.html",
 		},
 		{
 			"characters": "\\",
-			"selector": "text.tex.latex"
+			"selector": "text.tex.latex",
 		}
 	],
 	"close_windows_when_empty": false,
-	"dictionary": "Packages/Dictionaries/German_de_DE.dic",
+	"dictionary": "Dictionaries/de_DE.dic",
 	"font_options":
 	[
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 11,
+	"font_size": 14,
 	"highlight_line": true,
 	"ignored_packages":
 	[
 		"citebibtex",
-		"ColorPicker",
 		"CSS",
 		"Highlight Dodgy Chars",
 		"Jedi - Python autocompletion",
 		"LaTeXSmartQuotes",
-		"Markdown",
 		"Markdown Extended",
+		"MarkdownPreview",
+		"sublack",
 		"SublimeLinter-chktex",
 		"SublimeLinter-flake8",
 		"SublimeLinter-pydocstyle",
 		"Unicode Character Highlighter",
-		"Vintage"
+		"Vintage",
+		"Markdown",
 	],
 	"indent_guide_options":
 	[
@@ -60,6 +62,11 @@
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
 	"show_line_endings": true,
-	"theme": "Default.sublime-theme",
-	"trim_trailing_white_space_on_save": true
+	"theme": "auto",
+	"trim_trailing_white_space_on_save": true,
+	"dark_theme": "Default Dark.sublime-theme",
+	"light_theme": "Default.sublime-theme",
+	"color_scheme": "auto",
+	"dark_color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"light_color_scheme": "Packages/Color Scheme - Default/Sixteen.sublime-color-scheme",
 }
