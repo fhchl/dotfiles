@@ -6,7 +6,7 @@ export BUP_DIR=/media/M/Backup/bup-ubuntu
 
 # export PATH="/home/fhchl/miniconda3/bin:$PATH"  # commented out by conda initialize
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
-export PATH=$HOME/.local/bin # julia
+export PATH=$HOME/.local/bin:$PATH # julia
 export MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH
 
@@ -54,8 +54,8 @@ alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/vid
 # for tlmgr
 alias psudo='sudo env PATH="$PATH"'
 
-# # modified "fishy" prompt
-# # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme
+# modified "fishy" prompt
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme
 _fishy_collapsed_wd() {
   echo $(pwd | perl -pe '
    BEGIN {
