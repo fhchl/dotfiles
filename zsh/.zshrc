@@ -4,29 +4,11 @@ export VISUAL='/usr/bin/code -w'
 export ZSH=$HOME/.oh-my-zsh
 export BUP_DIR=/media/M/Backup/bup-ubuntu
 
-export PATH=$HOME/miniconda/bin:$PATH
+# export PATH="/home/fhchl/miniconda3/bin:$PATH"  # commented out by conda initialize
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
-export PATH=$HOME/.local/bin # julia
+export PATH=$HOME/.local/bin:$PATH # julia
 export MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/fhchl/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/fhchl/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/fhchl/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/fhchl/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# hide conda env in prompt
-conda config --set changeps1 false
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -72,8 +54,8 @@ alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/vid
 # for tlmgr
 alias psudo='sudo env PATH="$PATH"'
 
-# # modified "fishy" prompt
-# # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme
+# modified "fishy" prompt
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme
 _fishy_collapsed_wd() {
   echo $(pwd | perl -pe '
    BEGIN {
@@ -105,3 +87,22 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"
 
 # initialize fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/fhchl/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/fhchl/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/fhchl/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/fhchl/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# hide conda env in prompt
+conda config --set changeps1 false
+conda config --set auto_activate_base false
