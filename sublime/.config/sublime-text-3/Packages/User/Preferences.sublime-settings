@@ -19,11 +19,11 @@
 	[
 		{
 			"characters": "<",
-			"selector": "text.html"
+			"selector": "text.html",
 		},
 		{
 			"characters": "\\",
-			"selector": "text.tex.latex"
+			"selector": "text.tex.latex",
 		}
 	],
 	"close_windows_when_empty": false,
@@ -38,7 +38,6 @@
 	"ignored_packages":
 	[
 		"citebibtex",
-		"ColorPicker",
 		"CSS",
 		"Highlight Dodgy Chars",
 		"Jedi - Python autocompletion",
@@ -49,7 +48,7 @@
 		"SublimeLinter-flake8",
 		"SublimeLinter-pydocstyle",
 		"Unicode Character Highlighter",
-		"Vintage"
+		"Vintage",
 	],
 	"indent_guide_options":
 	[
@@ -57,9 +56,9 @@
 		"draw_active"
 	],
 	"isort.sort_on_save": false,
-	"line_padding_bottom": 3,
-	"line_padding_top": 3,
+	// "line_padding_bottom": 3,
+	// "line_padding_top": 3,
 	"show_line_endings": true,
 	"theme": "Default.sublime-theme",
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
 }
