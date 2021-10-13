@@ -1,5 +1,5 @@
 "so pynvim does not have to be installed in every environment
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/home/fhchl/miniconda3/bin/python'
 let mapleader = " "
 
 "always copy to system clipboard
