@@ -1,5 +1,5 @@
 export LANG=en_US.UTF-8
-export EDITOR='/usr/bin/nvim -w'
+export EDITOR='/usr/bin/nvim'
 export VISUAL=$EDITOR
 export ZSH=$HOME/.oh-my-zsh
 export BUP_DIR=/media/M/Backup/bup-ubuntu
