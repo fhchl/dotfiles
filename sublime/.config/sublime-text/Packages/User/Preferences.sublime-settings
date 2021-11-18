@@ -34,7 +34,7 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 14,
+	"font_size": 11,
 	"highlight_line": true,
 	"ignored_packages":
 	[
@@ -43,6 +43,7 @@
 		"Highlight Dodgy Chars",
 		"Jedi - Python autocompletion",
 		"LaTeXSmartQuotes",
+		"Markdown",
 		"Markdown Extended",
 		"MarkdownPreview",
 		"sublack",
@@ -51,7 +52,6 @@
 		"SublimeLinter-pydocstyle",
 		"Unicode Character Highlighter",
 		"Vintage",
-		"Markdown",
 	],
 	"indent_guide_options":
 	[
