@@ -1,0 +1,10 @@
+{
+	"bookmarks" : "/home/fhchl/.config/radiotray-ng/bookmarks.json",
+	"last-station" : "Deutschlandfunk",
+	"last-station-group" : "root",
+	"last-station-notifications" : true,
+	"notification-verbose" : true,
+	"notifications" : true,
+	"split-title" : true,
+	"volume-level" : 100
+}

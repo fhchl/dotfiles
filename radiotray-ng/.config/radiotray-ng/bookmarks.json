@@ -1,0 +1,20 @@
+[
+	{
+		"group" : "root",
+		"stations" : 
+		[
+			{
+				"name" : "do you radio",
+				"url" : "https://s4.radio.co/s374bdb2d0/listen"
+			},
+			{
+				"name" : "WorldwideFM",
+				"url" : "http://worldwidefm.out.airtime.pro:8000/worldwidefm_a"
+			},
+			{
+				"name" : "Deutschlandfunk",
+				"url" : "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3?aggregator=web"
+			}
+		]
+	}
+]
