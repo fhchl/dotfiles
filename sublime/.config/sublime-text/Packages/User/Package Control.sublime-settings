@@ -5,10 +5,11 @@
 	],
 	"installed_packages":
 	[
-		"A File Icon",
 		"Anaconda",
 		"AutoDocstring",
 		"BracketHighlighter",
+		"Clang Format",
+		"CMake",
 		"Color Highlighter",
 		"ColorPicker",
 		"Compare Side-By-Side",
@@ -18,6 +19,7 @@
 		"Cython+",
 		"Dockerfile Syntax Highlighting",
 		"Dotfiles Syntax Highlighting",
+		"EasyClangComplete",
 		"EditorConfig",
 		"FileIcons",
 		"GitSavvy",
@@ -46,6 +48,7 @@
 		"SublimeLinter-chktex",
 		"SublimeLinter-clang",
 		"SublimeLinter-cppcheck",
+		"SublimeLinter-cpplint",
 		"SublimeLinter-flake8",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-pydocstyle",
