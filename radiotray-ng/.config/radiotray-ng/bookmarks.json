@@ -14,6 +14,10 @@
 			{
 				"name" : "Deutschlandfunk",
 				"url" : "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3?aggregator=web"
+			},
+			{
+				"name" : "byte FM",
+				"url" : "http://www.byte.fm/stream/bytefm.m3u"
 			}
 		]
 	}
