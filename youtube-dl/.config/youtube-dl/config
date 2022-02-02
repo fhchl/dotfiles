@@ -6,4 +6,4 @@
 
 --restrict-filenames
 
--f 'bestaudio[ext=mp3]'
+--audio-format 'mp3'
