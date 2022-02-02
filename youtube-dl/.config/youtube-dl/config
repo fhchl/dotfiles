@@ -1,0 +1,9 @@
+# always extract audio
+-x
+
+# save in download dir
+-o ~/Downloads/%(artist)s-%(track)s-%(title)s.%(ext)s
+
+--restrict-filenames
+
+-f 'bestaudio[ext=mp3]'
