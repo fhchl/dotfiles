@@ -55,6 +55,7 @@ alias dotfiles='cd ~/dotfiles'
 alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=30:outfmt=yuy2'
 # for tlmgr
 alias psudo='sudo env PATH="$PATH"'
+alias sioyek='~/opt/Sioyek-x86_64.AppImage &>/dev/null & disown'
 
 # modified "fishy" prompt
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme
