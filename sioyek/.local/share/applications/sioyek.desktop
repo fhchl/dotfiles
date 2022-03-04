@@ -1,0 +1,7 @@
+[Desktop Entry]
+MimeType=application/pdf
+Terminal=false
+Name=Sioyek
+Exec=$HOME/.local/bin/Sioyek-x86_64.AppImage
+Type=Application
+Categories=Viewer
