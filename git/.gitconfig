@@ -2,7 +2,7 @@
 	email = fhchl@users.noreply.github.com
 	name = fhchl
 [credential]
-	helper = cache --timeout=3600000
+	helper = store
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
 [merge "jupyternotebook"]
