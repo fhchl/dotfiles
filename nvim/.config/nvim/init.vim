@@ -17,6 +17,7 @@ set hidden
 set nobackup undofile
 set scrolloff=8
 set completeopt=menuone,noinsert,noselect
+set relativenumber
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
 " indent with tab
@@ -25,6 +26,10 @@ nnoremap <S-Tab> <<_
 inoremap <S-Tab> <C-d> 
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+
+" run python files
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 """ autocompletion
 " Use <Tab> and <S-Tab> to navigate through popup menu
@@ -58,6 +63,7 @@ Plug 'godlygeek/tabular'  " required by vim-markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'mg979/vim-visual-multi' " multiple cursers
 call plug#end()
 
 " markdown and pandoc
@@ -95,7 +101,7 @@ nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>vsd :lua vim.lsp.util.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
+nnoremap <leader>vsd :lua vim.lsp.util.show_line_diagnostics()<CR>
 
 lua require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.clangd.setup{ on_attach=require'completion'.on_attach }
