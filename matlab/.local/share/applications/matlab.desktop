@@ -1,0 +1,5 @@
+[Desktop Entry]
+Terminal=false
+Name=Matlab
+Exec=/home/fhchl/opt/MATLAB/R2020b/bin/matlab
+Type=Application
