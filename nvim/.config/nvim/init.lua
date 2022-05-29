@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd('BufWritePost', { command = 'source <afile> | Packer
 
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
+  use 'tpope/vim-sleuth' -- autodetect tabs and spaces
   use 'tpope/vim-fugitive' -- Git commands in nvim
   use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -33,6 +34,8 @@ require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use "folke/which-key.nvim"
+  use 'mg979/vim-visual-multi'
+  use 'jpalardy/vim-slime'
 end)
 
 --Set highlight on search
@@ -65,6 +68,11 @@ vim.cmd [[colorscheme onedark]]
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.scrolloff = 8
+
 --Set statusbar
 require('lualine').setup {
   options = {
@@ -76,7 +84,7 @@ require('lualine').setup {
 }
 
 --Enable Comment.nvim
-require('Comment').setup()
+require('Comment').setup{}
 
 --Remap space as leader key
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
