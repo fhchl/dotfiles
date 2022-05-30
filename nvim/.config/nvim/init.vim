@@ -80,6 +80,7 @@ Plug 'jbyuki/nabla.nvim' "optional
 Plug 'aspeddro/cmp-pandoc.nvim'
 
 Plug 'mg979/vim-visual-multi' " multiple cursers
+Plug 'folke/which-key.nvim'
 call plug#end()
 
 " markdown and pandoc
@@ -194,5 +195,5 @@ lua <<EOF
   require('lspconfig')['clangd'].setup {
     capabilities = capabilities
   }
-
+  require('which-key').setup{}
 EOF
