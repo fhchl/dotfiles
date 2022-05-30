@@ -33,6 +33,8 @@ alias jc='jupyter notebook \
   --NotebookApp.allow_origin='https://colab.research.google.com' \
   --port=8888 \
   --NotebookApp.port_retries=0'
+alias rr='ranger'
+alias nv='nvim'
 
 # open as on mac
 alias open='xdg-open &>/dev/null'
@@ -109,3 +111,4 @@ unset __conda_setup
 # hide conda env in prompt
 conda config --set changeps1 false
 conda config --set auto_activate_base false
+
