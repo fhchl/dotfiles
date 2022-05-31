@@ -37,6 +37,7 @@ require('packer').startup(function(use)
   use "folke/which-key.nvim"
   use 'mg979/vim-visual-multi'
   use 'jpalardy/vim-slime'
+  use 'kyazdani42/nvim-tree.lua'
 end)
 
 --Set highlight on search
@@ -207,10 +208,10 @@ require('nvim-treesitter.configs').setup {
 }
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+-- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- LSP settings
 local lspconfig = require 'lspconfig'
@@ -337,4 +338,8 @@ cmp.setup {
 }
 
 require('which-key').setup{}
+
+-- NvimTree
+require('nvim-tree').setup{}
+vim.cmd[[nnoremap <leader>e :NvimTreeToggle<CR>]]
 -- vim: ts=2 sts=2 sw=2 et
