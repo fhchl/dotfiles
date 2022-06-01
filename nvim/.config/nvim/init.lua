@@ -33,6 +33,7 @@ require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use "folke/which-key.nvim"
+  use 'kassio/neoterm'
 end)
 
 --Set highlight on search
@@ -62,8 +63,14 @@ vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true
 vim.cmd [[colorscheme onedark]]
 
--- Set completeopt to have a better completion experience
+--Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
+
+--Ruler
+vim.o.colorcolumn = 80
+
+--Copy paste with clipboard
+vim.cmd[[set clipboard+=unnamedplus]]
 
 --Set statusbar
 require('lualine').setup {
@@ -328,4 +335,42 @@ cmp.setup {
 }
 
 require('which-key').setup{}
+
+--Neoterm
+vim.cmd[[
+"let g:neoterm_automap_keys = "\\r"
+"let g:neoterm_autoscroll = '1'
+"let g:neoterm_size = 7
+"let g:neoterm_direct_open_repl = 0
+"let g:neoterm_auto_repl_cmd = 1
+"let g:neoterm_repl_python = "ipython3 --matplotlib"
+"let g:neoterm_keep_term_open = 0
+"let g:neoterm_autojump = 0
+nmap <silent> <Leader>rs :TREPLSendSelection<CR>
+nmap <silent> <Leader>rl :TREPLSendLine<CR>
+let g:neoterm_default_mod = 'botright'
+
+function! StartIPy()
+    Tnew
+    T ipython --matplotlib
+    T cd %:p:h
+    T %load_ext autoreload
+    T %autoreload 2
+    "<C-w>w
+endfunction
+
+nmap <silent> <Leader>ip :call StartIPy()<CR>
+nmap <silent> <Leader>i  :w<CR>:T run  %<CR>
+nmap <silent> <Leader>y  :w<CR>:T python3  %<CR>
+nmap <silent> <Leader>x  :w<CR>:T x<CR>
+nmap <silent> <Leader>m  :w<CR>:T make<CR>
+nmap <silent> <Leader>c  :w<CR>:T make clean<CR>
+nmap <silent> <Leader>l  :w<CR>:T  xelatex %:t<CR>
+nmap <silent> <Leader>te :!trans -w 81 -no-ansi en:de <cword><CR>
+nmap <silent> <Leader>td :!trans -w 81 -no-ansi de:en <cword><CR>
+]]
+
+
+
+
 -- vim: ts=2 sts=2 sw=2 et
