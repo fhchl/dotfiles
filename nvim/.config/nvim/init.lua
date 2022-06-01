@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd('BufWritePost', { command = 'source <afile> | Packer
 
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
+  use 'tpope/vim-sleuth' -- autodetect tabs and spaces
   use 'tpope/vim-fugitive' -- Git commands in nvim
   use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -18,6 +19,7 @@ require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'mjlbach/onedark.nvim' -- Theme inspired by Atom
+  use 'Shatur/neovim-ayu' -- Theme
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   -- Add indentation guides even on blank lines
   use 'lukas-reineke/indent-blankline.nvim'
@@ -34,6 +36,9 @@ require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use "folke/which-key.nvim"
   use 'kassio/neoterm'
+  use 'mg979/vim-visual-multi'
+  use 'jpalardy/vim-slime'
+  use 'kyazdani42/nvim-tree.lua'
 end)
 
 --Set highlight on search
@@ -61,7 +66,7 @@ vim.wo.signcolumn = 'yes'
 
 --Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme onedark]]
+vim.cmd [[colorscheme ayu]]
 
 --Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -71,6 +76,11 @@ vim.o.colorcolumn = 80
 
 --Copy paste with clipboard
 vim.cmd[[set clipboard+=unnamedplus]]
+
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.scrolloff = 8
 
 --Set statusbar
 require('lualine').setup {
@@ -83,7 +93,7 @@ require('lualine').setup {
 }
 
 --Enable Comment.nvim
-require('Comment').setup()
+require('Comment').setup{}
 
 --Remap space as leader key
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -205,10 +215,10 @@ require('nvim-treesitter.configs').setup {
 }
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+-- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- LSP settings
 local lspconfig = require 'lspconfig'
@@ -335,6 +345,10 @@ cmp.setup {
 }
 
 require('which-key').setup{}
+
+-- NvimTree
+require('nvim-tree').setup{}
+vim.cmd[[nnoremap <leader>e :NvimTreeToggle<CR>]]
 
 --Neoterm
 vim.cmd[[
