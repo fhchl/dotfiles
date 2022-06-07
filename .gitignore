@@ -1,6 +1,6 @@
 radiotray-ng/.config/radiotray-ng/radiotray-ng.pid
 sublime/.config/sublime-text/Local/
-nvim/plugin/packer_compiled.lua
+nvim/.config/nvim/plugin/packer_compiled.lua
 tags
 tags.lock
 tags.temp
