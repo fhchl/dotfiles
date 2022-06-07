@@ -1,5 +1,0 @@
-[Desktop Entry]
-Terminal=false
-Name=Matlab
-Exec=/home/fhchl/.local/matlab/2021/bin/matlab -desktop
-Type=Application
