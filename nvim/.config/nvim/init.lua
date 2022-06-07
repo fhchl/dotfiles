@@ -38,7 +38,12 @@ require('packer').startup(function(use)
   use 'kassio/neoterm'
   use 'mg979/vim-visual-multi'
   use 'jpalardy/vim-slime'
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    }
+  }
 end)
 
 --Set highlight on search
