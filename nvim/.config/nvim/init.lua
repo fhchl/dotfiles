@@ -71,7 +71,7 @@ vim.wo.signcolumn = 'yes'
 
 --Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme ayu]]
+require('ayu').colorscheme()
 
 --Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -91,7 +91,7 @@ vim.o.scrolloff = 8
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'onedark',
+    theme = 'ayu',
     component_separators = '|',
     section_separators = '',
   },
@@ -357,36 +357,26 @@ vim.cmd[[nnoremap <leader>e :NvimTreeToggle<CR>]]
 
 --Neoterm
 vim.cmd[[
-"let g:neoterm_automap_keys = "\\r"
-"let g:neoterm_autoscroll = '1'
-"let g:neoterm_size = 7
-"let g:neoterm_direct_open_repl = 0
-"let g:neoterm_auto_repl_cmd = 1
-"let g:neoterm_repl_python = "ipython3 --matplotlib"
-"let g:neoterm_keep_term_open = 0
-"let g:neoterm_autojump = 0
-nmap <silent> <Leader>rs :TREPLSendSelection<CR>
-nmap <silent> <Leader>rl :TREPLSendLine<CR>
-let g:neoterm_default_mod = 'botright'
+" Use gx{text-object} in normal mode
+nmap gx <Plug>(neoterm-repl-send)
+" Send selected contents in visual mode.
+xmap gx <Plug>(neoterm-repl-send)
+" Use `gxx` or `2gxx` to send current or 2 lines to REPL.
+nmap gxx <Plug>(neoterm-repl-send-line)
+
+let g:neoterm_default_mod = 'rightbelow vertical'
+let g:neoterm_autoscroll = 1
 
 function! StartIPy()
     Tnew
-    T ipython --matplotlib
+    T ipython
     T cd %:p:h
     T %load_ext autoreload
     T %autoreload 2
-    "<C-w>w
 endfunction
 
 nmap <silent> <Leader>ip :call StartIPy()<CR>
 nmap <silent> <Leader>i  :w<CR>:T run  %<CR>
-nmap <silent> <Leader>y  :w<CR>:T python3  %<CR>
-nmap <silent> <Leader>x  :w<CR>:T x<CR>
-nmap <silent> <Leader>m  :w<CR>:T make<CR>
-nmap <silent> <Leader>c  :w<CR>:T make clean<CR>
-nmap <silent> <Leader>l  :w<CR>:T  xelatex %:t<CR>
-nmap <silent> <Leader>te :!trans -w 81 -no-ansi en:de <cword><CR>
-nmap <silent> <Leader>td :!trans -w 81 -no-ansi de:en <cword><CR>
 ]]
 
 
