@@ -38,13 +38,26 @@ require('packer').startup(function(use)
   use 'kassio/neoterm'
   use 'mg979/vim-visual-multi'
   use 'jpalardy/vim-slime'
+  use 'kyazdani42/nvim-web-devicons' -- optional, for file icon
+  use 'kyazdani42/nvim-tree.lua'
   use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    'rmagatti/auto-session',
+    config = function()
+    require('auto-session').setup {
+      log_level = 'info',
+      auto_session_suppress_dirs = {'~/',}
     }
+    end
   }
-end)
+  use {
+    'rmagatti/session-lens',
+    requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
+    config = function()
+      require('session-lens').setup({--[[your custom config--]]})
+    end
+  }
+  end
+)
 
 --Set highlight on search
 vim.o.hlsearch = false
@@ -148,8 +161,9 @@ require('telescope').setup {
   },
 }
 
--- Enable telescope fzf native
+-- Enable telescope fzf and session lens
 require('telescope').load_extension 'fzf'
+require("telescope").load_extension("session-lens")
 
 --Add leader shortcuts
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers)
@@ -165,6 +179,7 @@ vim.keymap.set('n', '<leader>so', function()
   require('telescope.builtin').tags { only_current_buffer = true }
 end)
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles)
+vim.keymap.set('n', '<leader>ss', require('session-lens').search_session)
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
@@ -379,7 +394,8 @@ nmap <silent> <Leader>ip :call StartIPy()<CR>
 nmap <silent> <Leader>i  :w<CR>:T run  %<CR>
 ]]
 
-
+-- recommended by auto-session
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 
 -- vim: ts=2 sts=2 sw=2 et
