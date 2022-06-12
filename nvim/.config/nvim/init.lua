@@ -156,9 +156,19 @@ require('telescope').setup {
       i = {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
+        ["<esc>"] = require("telescope.actions").close -- don't enter normal mode, but just exit
       },
     },
   },
+  pickers = {
+    buffers = {
+      mappings = {
+        i = {
+         ['<C-d>'] = require('telescope.actions').delete_buffer, -- close selected buffer
+        }
+      }
+    }
+  }
 }
 
 -- Enable telescope fzf and session lens
