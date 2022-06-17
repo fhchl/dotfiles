@@ -56,6 +56,7 @@ require('packer').startup(function(use)
       require('session-lens').setup({--[[your custom config--]]})
     end
   }
+  use 'lervag/vimtex'
   end
 )
 
