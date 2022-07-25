@@ -5,6 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 export BUP_DIR=/media/M/Backup/bup-ubuntu
 export PATH=$HOME/.cabal/bin/:$PATH
 export PATH=/home/fhchl/.cargo/bin/:$PATH  # nyxt blockit webkit extention
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/.local/zk
 
 # export PATH="/home/fhchl/miniconda3/bin:$PATH"  # commented out by conda initialize
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH

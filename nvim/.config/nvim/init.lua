@@ -57,9 +57,16 @@ require('packer').startup(function(use)
     end
   }
   use 'lervag/vimtex'
+  use 'vim-pandoc/vim-pandoc'
+  use 'vim-pandoc/vim-pandoc-syntax'
+  use 'mickael-menu/zk-nvim'
   end
 )
 
+--Configure vim-pandoc
+vim.g['pandoc#modules#enabled'] = {"bibliographies", "completion"}
+vim.g['pandoc#completion#bib#mode'] = 'citeproc'
+vim.g['pandoc#biblio#use_bibtool'] = 1
 --Set highlight on search
 vim.o.hlsearch = false
 
@@ -71,6 +78,8 @@ vim.o.mouse = 'a'
 
 --Enable break indent
 vim.o.breakindent = true
+vim.o.breakindentopt = 'shift:2,min:40,sbr'
+vim.o.showbreak = '>>'
 
 --Save undo history
 vim.opt.undofile = true
@@ -408,5 +417,26 @@ nmap <silent> <Leader>i  :w<CR>:T run  %<CR>
 -- recommended by auto-session
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
+-- zk
+require("zk").setup({
+  -- can be "telescope", "fzf" or "select" (`vim.ui.select`)
+  -- it's recommended to use "telescope" or "fzf"
+  picker = "telescope",
 
+  lsp = {
+    -- `config` is passed to `vim.lsp.start_client(config)`
+    config = {
+      cmd = { "zk", "lsp" },
+      name = "zk",
+      -- on_attach = ...
+      -- etc, see `:h vim.lsp.start_client()`
+    },
+
+    -- automatically attach buffers in a zk notebook that match the given filetypes
+    auto_attach = {
+      enabled = true,
+      filetypes = { "markdown", "pandoc"},
+    },
+  },
+})
 -- vim: ts=2 sts=2 sw=2 et
