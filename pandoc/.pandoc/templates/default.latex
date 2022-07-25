@@ -431,7 +431,7 @@ $if(institute)$
 \institute{$for(institute)$$institute$$sep$ \and $endfor$}
 $endif$
 $if(titlegraphic)$
-\titlegraphic{\includegraphics{$titlegraphic$}}
+\titlegraphic{$titlegraphic$}
 $endif$
 $if(logo)$
 \logo{\includegraphics{$logo$}}
