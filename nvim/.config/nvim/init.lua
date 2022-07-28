@@ -29,6 +29,8 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  -- Highlight definitions or use of object under curser
+  use 'nvim-treesitter/nvim-treesitter-refactor'
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp'
@@ -60,6 +62,8 @@ require('packer').startup(function(use)
   use 'vim-pandoc/vim-pandoc'
   use 'vim-pandoc/vim-pandoc-syntax'
   use 'mickael-menu/zk-nvim'
+  -- dim unused variables
+  use 'zbirenbaum/neodim'
   end
 )
 
@@ -204,6 +208,8 @@ vim.keymap.set('n', '<leader>ss', require('session-lens').search_session)
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
 require('nvim-treesitter.configs').setup {
+  ensure_installed = { 'c', 'lua', 'python' },
+  auto_install = true,
   highlight = {
     enable = true, -- false will disable the whole extension
   },
@@ -252,6 +258,13 @@ require('nvim-treesitter.configs').setup {
       },
     },
   },
+  refactor = {
+    highlight_definitions = {
+      enable = true,
+      -- Set to false if you have an `updatetime` of ~100.
+      clear_on_cursor_move = true,
+    },
+  },
 }
 
 -- Diagnostic keymaps
@@ -280,6 +293,20 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_document_symbols, opts)
   vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
+
+  require("neodim").setup({
+      alpha = 0.75,
+      blend_color = "#000000",
+      update_in_insert = {
+        enable = true,
+        delay = 20,
+      },
+      hide = {
+        virtual_text = true,
+        signs = true,
+        underline = true,
+      }
+    })
 end
 
 -- nvim-cmp supports additional completion capabilities
