@@ -64,6 +64,13 @@ require('packer').startup(function(use)
   use 'mickael-menu/zk-nvim'
   -- dim unused variables
   use 'zbirenbaum/neodim'
+  -- edit with sudo
+  -- " Re-open a current file with sudo
+  -- :SudaRead
+  -- 
+  -- " Open /etc/sudoers with sudo
+  -- :SudaRead /etc/sudoers
+  use 'lambdalisue/suda.vim'
   end
 )
 
@@ -414,7 +421,11 @@ cmp.setup {
 require('which-key').setup{}
 
 -- NvimTree
-require('nvim-tree').setup{}
+require("nvim-tree").setup { 
+  git = {
+    ignore = false,
+  },
+}
 vim.cmd[[nnoremap <leader>e :NvimTreeToggle<CR>]]
 
 --Neoterm
