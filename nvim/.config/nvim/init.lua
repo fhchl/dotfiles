@@ -41,7 +41,12 @@ require('packer').startup(function(use)
   use 'mg979/vim-visual-multi'
   use 'jpalardy/vim-slime'
   use 'kyazdani42/nvim-web-devicons' -- optional, for file icon
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+  }
   use {
     'rmagatti/auto-session',
     config = function()
@@ -71,6 +76,18 @@ require('packer').startup(function(use)
   -- " Open /etc/sudoers with sudo
   -- :SudaRead /etc/sudoers
   use 'lambdalisue/suda.vim'
+  -- highlight TODO, FIXME etc.
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
   end
 )
 
@@ -114,7 +131,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.colorcolumn = 80
 
 --Copy paste with clipboard
-vim.cmd[[set clipboard+=unnamedplus]]
+vim.cmd[[set clipboard+=unnamed]]
 
 vim.o.expandtab = true
 vim.o.tabstop = 4
@@ -422,8 +439,18 @@ require('which-key').setup{}
 
 -- NvimTree
 require("nvim-tree").setup { 
+  open_on_setup = false,
+  open_on_setup_file = false,
+  hijack_netrw = false,
   git = {
     ignore = false,
+  },
+  renderer = {
+    icons = {
+      show = {
+        file = false,
+      },
+    },
   },
 }
 vim.cmd[[nnoremap <leader>e :NvimTreeToggle<CR>]]

@@ -2,7 +2,7 @@
 	// You can set a path to your python virtualenv,
     // for example `/home/user/.virtualenvs/myenv)`.
     // Note: Interpreter path would be found automaticaly
-    "python_virtualenv": "/home/fmheu/miniconda",
+    "python_virtualenv": "/home/fhchl/miniconda",
 
 
     // Use hover popup to display the docstring of a function.
