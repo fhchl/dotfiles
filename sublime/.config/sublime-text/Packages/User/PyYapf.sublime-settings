@@ -1,6 +1,6 @@
 {
       // full path and command to run yapf
-      "yapf_command": "/home/fmheu/anaconda3/bin/yapf",
+      "yapf_command": "/home/fhchl/anaconda3/bin/yapf",
 
       // reformat entire file if no text is selected
       "use_entire_file_if_no_selection": true,
