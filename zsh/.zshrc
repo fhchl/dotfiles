@@ -48,6 +48,8 @@ alias el='conda env list'
 
 alias checkcode='pycodestyle && pydocstyle'
 
+alias hx='~/.local/helix/helix.AppImage'
+
 # classify ls and ll
 alias l='ls -lahF'
 alias la='ls -lAhF'
@@ -97,17 +99,21 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/fhchl/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/fhchl/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/fhchl/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/fhchl/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/fhchl/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/fhchl/mambaforge/etc/profile.d/conda.sh"
     else
-        export PATH="/home/fhchl/miniconda3/bin:$PATH"
+        export PATH="/home/fhchl/mambaforge/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/fhchl/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/fhchl/mambaforge/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
 # hide conda env in prompt
