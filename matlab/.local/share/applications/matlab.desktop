@@ -1,0 +1,5 @@
+[Desktop Entry]
+Terminal=false
+Name=Matlab
+Exec=env MESA_LOADER_DRIVER_OVERRIDE=i965 /home/fhchl/.local/bin/matlab -desktop
+Type=Application

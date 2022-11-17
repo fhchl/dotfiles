@@ -18,6 +18,14 @@
 			{
 				"name" : "byte FM",
 				"url" : "http://www.byte.fm/stream/bytefm.m3u"
+			},
+			{
+				"name" : "NTS 1",
+				"url" : "http://stream-relay-geo.ntslive.net/stream"
+			},
+			{
+				"name" : "NTS 2",
+				"url" : "http://stream-relay-geo.ntslive.net/stream2"
 			}
 		]
 	}
