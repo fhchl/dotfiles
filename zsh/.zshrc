@@ -120,3 +120,5 @@ fi
 conda config --set changeps1 false
 conda config --set auto_activate_base false
 
+
+[ -f "/home/fhchl/.ghcup/env" ] && source "/home/fhchl/.ghcup/env" # ghcup-env
