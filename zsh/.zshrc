@@ -3,8 +3,7 @@ export EDITOR='/usr/bin/nvim'
 export VISUAL=$EDITOR
 export ZSH=$HOME/.oh-my-zsh
 export BUP_DIR=/media/M/Backup/bup-ubuntu
-export PATH=$HOME/.cabal/bin/:$PATH
-export PATH=/home/fhchl/.cargo/bin/:$PATH  # nyxt blockit webkit extention
+export PATH=$PATH:$HOME/.cabal/bin/
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/.local/zk
 
