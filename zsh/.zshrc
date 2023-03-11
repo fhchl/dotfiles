@@ -6,6 +6,8 @@ export BUP_DIR=/media/M/Backup/bup-ubuntu
 export PATH=$PATH:$HOME/.cabal/bin/
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/.local/zk
+export TEXMACS_PATH=~/.local/texmacs/TeXmacs
+export PATH=$TEXMACS_PATH/bin:$PATH
 
 # export PATH="/home/fhchl/miniconda3/bin:$PATH"  # commented out by conda initialize
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH

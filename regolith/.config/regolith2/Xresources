@@ -1,7 +1,7 @@
 !regolith.look.path: /usr/share/regolith-look/blackhole
 !regolith.look.path: /usr/share/regolith-look/default
 !regolith.look.path: /usr/share/regolith-look/gruvbox
-regolith.look.path: /usr/share/regolith-look/nevil
+!regolith.look.path: /usr/share/regolith-look/nevil
 regolith.lockscreen.wallpaper.file: ~/.config/regolith2/wallpapers/ESP_020528_1750_desktop.jpg
 regolith.wallpaper.file: ~/.config/regolith2/wallpapers/ESP_019753_2000_desktop.jpg
 regolith.wallpaper.options: zoom
