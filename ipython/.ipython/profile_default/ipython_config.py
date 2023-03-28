@@ -32,12 +32,7 @@
 
 ## lines of code to run at IPython startup.
 #  Default: []
-c.InteractiveShellApp.exec_lines = [
-    '%autoreload 2',
-    'import numpy as np; print("imported numpy as np")',
-    'import matplotlib.pyplot as plt; print("imported matplotlib.pyplot as plt")',
-    'print("Warning: disable autoreload in ipython_config.py to improve performance.")'
-]
+# c.InteractiveShellApp.exec_lines = []
 
 ## A list of dotted module names of IPython extensions to load.
 #  Default: []
