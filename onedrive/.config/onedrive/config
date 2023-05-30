@@ -1,0 +1,1 @@
+skip_dir = ".quarto|.pytest_cache|.jupyter_cache"
