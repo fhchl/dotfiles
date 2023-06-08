@@ -3,7 +3,7 @@
 select = ["E", "F", "B"]
 ignore = [
   "F722", # syntax error in forward annotation
-  "E731", # Do not assign lambda expression
+  "E731", # Do not assign lambda expression
 ]
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.
