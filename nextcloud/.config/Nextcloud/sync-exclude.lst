@@ -40,3 +40,6 @@ tags
 tags.lock
 .lock
 .stack-work
+].mypy_cache
+].ruff_cache
+].pytype
