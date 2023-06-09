@@ -4,3 +4,4 @@ nvim/.config/nvim/plugin/packer_compiled.lua
 tags
 tags.lock
 tags.temp
+*__pycache__
