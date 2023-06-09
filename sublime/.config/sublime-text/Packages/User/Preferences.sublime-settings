@@ -28,7 +28,7 @@
 		}
 	],
 	"close_windows_when_empty": false,
-	"dictionary": "Dictionaries/de_DE.dic",
+	"dictionary": "Packages/Language - English/en_US.dic",
 	"font_options":
 	[
 		"gray_antialias",
@@ -47,7 +47,6 @@
 		"Jedi - Python autocompletion",
 		"LaTeXSmartQuotes",
 		"MagicPython",
-		"Markdown",
 		"Markdown Extended",
 		"MarkdownPreview",
 		"Python Breakpoints",
@@ -62,6 +61,7 @@
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-pydocstyle",
 		"Terminal",
+		"TodoTxt Syntax",
 		"Unicode Character Highlighter",
 		"Vintage",
 	],
