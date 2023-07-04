@@ -4,10 +4,6 @@
 		"stations" : 
 		[
 			{
-				"name" : "do you radio",
-				"url" : "https://s4.radio.co/s374bdb2d0/listen"
-			},
-			{
 				"name" : "WorldwideFM",
 				"url" : "http://worldwidefm.out.airtime.pro:8000/worldwidefm_a"
 			},
@@ -26,6 +22,10 @@
 			{
 				"name" : "NTS 2",
 				"url" : "http://stream-relay-geo.ntslive.net/stream2"
+			},
+			{
+				"name" : "doyouradio",
+				"url" : "https://doyouworld.out.airtime.pro/doyouworld_a"
 			}
 		]
 	}
