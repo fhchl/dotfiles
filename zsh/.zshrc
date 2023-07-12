@@ -49,8 +49,6 @@ alias el='conda env list'
 
 alias checkcode='pycodestyle && pydocstyle'
 
-alias hx='~/.local/helix/helix.AppImage'
-
 # classify ls and ll
 alias l='ls -lahF'
 alias la='ls -lAhF'
