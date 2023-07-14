@@ -1,5 +1,5 @@
 export LANG=en_US.UTF-8
-export EDITOR='/usr/bin/nvim'
+export EDITOR=hx
 export VISUAL=$EDITOR
 export ZSH=$HOME/.oh-my-zsh
 export BUP_DIR=/media/M/Backup/bup-ubuntu
@@ -135,4 +135,17 @@ rga-fzf() {
 	)" &&
 	echo "opening $file" &&
 	xdg-open "$file"
+}
+
+# https://github.com/jesseduffield/lazygit#changing-directory-on-exit
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
 }
