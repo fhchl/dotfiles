@@ -1,5 +1,14 @@
 [[language]]
 name = "python"
 scope = "source.python"
-language-server = { command = "ruff-lsp" }
+# Pylsp
+# language-server = { command = "pylsp" }
+# Ruff
+# language-server = { command = "ruff-lsp" }
+# config = { settings = { args = [] } }
+# Pyright
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
 config = { settings = { args = [] } }
+formatter = { command = "black", args = ["--quiet", "-"] }
+auto-format = false
+
