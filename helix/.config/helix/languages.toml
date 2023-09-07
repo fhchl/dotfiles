@@ -11,4 +11,5 @@ language-server = { command = "pyright-langserver", args = ["--stdio"] }
 config = { settings = { args = [] } }
 formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = false
+rulers = [88]
 
