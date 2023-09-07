@@ -149,3 +149,12 @@ lg()
             rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
     fi
 }
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/fhchl/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
