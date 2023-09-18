@@ -1,2 +1,0 @@
-skip_dir = ".quarto|.pytest_cache|.jupyter_cache|.vscode"
-sync_business_shared_folders = "true"
