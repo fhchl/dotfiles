@@ -50,11 +50,10 @@ alias el='conda env list'
 alias checkcode='pycodestyle && pydocstyle'
 
 # classify ls and ll
-alias l='ls -lahF'
-alias la='ls -lAhF'
-alias ll='ls -lhF'
-alias ls='ls --color=tty -F'
-alias lsa='ls -lahF'
+alias l='exa -lahF'
+alias la='exa -lahF'
+alias ll='exa -lhF'
+alias ls='exa -F'
 
 alias dotfiles='cd ~/dotfiles'
 alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=30:outfmt=yuy2'
