@@ -1,15 +1,19 @@
+[language-server.ruff-lsp]
+command = "ruff-lsp"
+
+
 [[language]]
 name = "python"
-scope = "source.python"
+auto-format = false
+rulers = [88]
+formatter = { command = "black", args = ["--quiet", "-"] }
+language-servers = ["ruff-lsp", "pyright"]
+
 # Pylsp
 # language-server = { command = "pylsp" }
 # Ruff
 # language-server = { command = "ruff-lsp" }
 # config = { settings = { args = [] } }
 # Pyright
-language-server = { command = "pyright-langserver", args = ["--stdio"] }
-config = { settings = { args = [] } }
-formatter = { command = "black", args = ["--quiet", "-"] }
-auto-format = false
-rulers = [88]
+
 
