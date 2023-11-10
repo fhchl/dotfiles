@@ -1,3 +1,7 @@
+# dotfiles
+
+_... for a linux machine._
+
 Requires stow
 
     sudo apt install stow
