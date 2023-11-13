@@ -158,3 +158,5 @@ path=('/home/fhchl/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+source /home/fhchl/.config/broot/launcher/bash/br
