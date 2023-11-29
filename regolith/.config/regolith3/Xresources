@@ -4,11 +4,11 @@ regolith.wallpaper.options: zoom
 wm.bar.mode: hide
 wm.gaps.smart: inverse_outer
 
-!regolith.look.path: /usr/share/regolith-look/lascaille
-regolith.look.path: /usr/share/regolith-look/default
 
 gtk.font_name: Iosevka Aile 12
 gtk.monospace_font_name: Iosevka Term Extended
 gnome.terminal.font: Iosevka Term Extended
 wm.font: Iosevka Aile
 
+!regolith.look.path: /usr/share/regolith-look/default
+regolith.look.path: /usr/share/regolith-look/lascaille
