@@ -41,3 +41,4 @@ My Saved Places.
 ].mypy_cache
 ].ruff_cache
 ].pytype
+].jupyter_cache
