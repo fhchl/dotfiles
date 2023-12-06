@@ -10,5 +10,5 @@ gtk.monospace_font_name: Iosevka Term Extended
 gnome.terminal.font: Iosevka Term Extended
 wm.font: Iosevka Aile
 
-!regolith.look.path: /usr/share/regolith-look/default
-regolith.look.path: /usr/share/regolith-look/lascaille
+!regolith.look.path: /usr/share/regolith-look/ayu
+regolith.look.path: /usr/share/regolith-look/ayu-dark
