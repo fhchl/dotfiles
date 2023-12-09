@@ -1,1 +1,0 @@
-ExecStart=/usr/local/bin/gollum --show-all "/home/fhchl/Nextcloud/Dendron"
