@@ -5,3 +5,4 @@ tags
 tags.lock
 tags.temp
 *__pycache__
+regolith/.config/regolith3/flags/*
