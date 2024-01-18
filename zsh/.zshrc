@@ -23,7 +23,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip fasd conda-zsh-completion)
+plugins=(git pip zoxide fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,9 +93,6 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg_bold[magenta]%}>"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[yellow]%}#"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"
 
-# initialize fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/fhchl/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -160,3 +157,5 @@ export PATH
 # <<< juliaup initialize <<<
 
 source /home/fhchl/.config/broot/launcher/bash/br
+export PATH=$PATH:/home/fhchl/.pixi/bin
+eval "$(pixi completion --shell zsh)"
