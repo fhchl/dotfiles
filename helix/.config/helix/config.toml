@@ -12,10 +12,15 @@ select = "underline"
 # ";" = ["keep_primary_selection", "collapse_selection"]
 # Deselect last line
 X = ["extend_line_up", "extend_to_line_bounds"]
+# Move whole selection up and down
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
 [keys.normal]
 # Select lines upwards
 X = ["extend_line_up", "extend_to_line_bounds"]
-
+# Move current line up and down
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
 
