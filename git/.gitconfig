@@ -33,3 +33,16 @@
 [diff]
 	colorMoved = default
 #### end git-delta
+
+
+#### Begin difftastic
+[diff]
+        tool = difftastic
+		external = difft
+[difftool]
+        prompt = false
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+        difftool = true		
+#### End difftastic
