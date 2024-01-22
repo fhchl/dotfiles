@@ -51,9 +51,8 @@ alias el='conda env list'
 alias checkcode='pycodestyle && pydocstyle'
 
 # classify ls and ll
-alias l='exa -lahF'
-alias la='exa -lahF'
-alias ll='exa -lhF'
+alias la='ls -laF'
+alias ll='exa -lF'
 #alias ls='exa -F'
 
 alias dotfiles='cd ~/dotfiles'
