@@ -6,8 +6,8 @@
   "doubleTapSwitchLayerTimeout": 250,
   "iconsAndLayerTextsBrightness": 128,
   "alphanumericSegmentsBrightness": 128,
-  "keyBacklightBrightness": 124,
-  "ledsFadeTimeout": 0,
+  "keyBacklightBrightness": 27,
+  "ledsFadeTimeout": 300,
   "perKeyRgbPresent": true,
   "backlightingMode": 0,
   "backlightingNoneActionColor": {
@@ -7056,5 +7056,17 @@
       ]
     }
   ],
-  "macros": []
+  "macros": [
+    {
+      "isLooped": false,
+      "isPrivate": true,
+      "name": "$onInit",
+      "macroActions": [
+        {
+          "macroActionType": "command",
+          "command": "set module.trackpoint.baseSpeed 0.01\nset module.trackpoint.speed 0.5\nset module.trackpoint.xceleration 0.1\nset module.keycluster.swapAxes 1"
+        }
+      ]
+    }
+  ]
 }
