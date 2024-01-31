@@ -50,6 +50,8 @@ alias el='conda env list'
 
 alias checkcode='pycodestyle && pydocstyle'
 
+alias n='NNN_PLUG='p:preview-tui' nnn -a -e -P p'
+
 # classify ls and ll
 alias la='ls -laF'
 alias ll='exa -lF'
