@@ -4,10 +4,13 @@ command = "ruff-lsp"
 
 [[language]]
 name = "python"
+scope = "source.python"
 auto-format = false
 rulers = [88]
-formatter = { command = "black", args = ["--quiet", "-"] }
-language-servers = ["ruff-lsp", "pyright"]
+language-servers = [
+  "ruff-lsp", 
+  { name = "pyright", except-features = ["format"] }
+]
 
 [[language]]
 name = "markdown"
