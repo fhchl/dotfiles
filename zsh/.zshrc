@@ -169,7 +169,7 @@ then
   eval "$(pixi completion --shell zsh)"
 fi
 
-
+# yazi file manager
 function ya() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 	yazi "$@" --cwd-file="$tmp"
