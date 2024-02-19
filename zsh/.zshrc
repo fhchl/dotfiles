@@ -94,27 +94,27 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg_bold[magenta]%}>"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[yellow]%}#"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/fhchl/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/fhchl/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/fhchl/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/fhchl/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/fhchl/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/fhchl/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
 if type conda >/dev/null 2>&1
 then
-  # >>> conda initialize >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/home/fhchl/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/home/fhchl/mambaforge/etc/profile.d/conda.sh" ]; then
-          . "/home/fhchl/mambaforge/etc/profile.d/conda.sh"
-      else
-          export PATH="/home/fhchl/mambaforge/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
-
-  if [ -f "/home/fhchl/mambaforge/etc/profile.d/mamba.sh" ]; then
-      . "/home/fhchl/mambaforge/etc/profile.d/mamba.sh"
-  fi
-  # <<< conda initialize <<<
-
   # hide conda env in prompt
   conda config --set changeps1 false
   conda config --set auto_activate_base false
@@ -168,3 +168,14 @@ if type pixi >/dev/null 2>&1
 then
   eval "$(pixi completion --shell zsh)"
 fi
+
+
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
