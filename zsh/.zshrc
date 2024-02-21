@@ -14,11 +14,16 @@ export PATH=$PATH:~/.local/zk
 export TEXMACS_PATH=~/.local/texmacs/TeXmacs
 export PATH=$TEXMACS_PATH/bin:$PATH
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+
 # export PATH="/home/fhchl/miniconda3/bin:$PATH"  # commented out by conda initialize
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
 export PATH=$HOME/.local/bin:$PATH # julia
 export MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH
+
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -27,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip zoxide fzf aliases last-working-dir)
+plugins=(git pip zoxide fzf aliases last-working-dir pyenv poetry)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,63 +72,33 @@ alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/vid
 alias psudo='sudo env PATH="$PATH"'
 alias sioyek='~/opt/Sioyek-x86_64.AppImage &>/dev/null & disown'
 
-# modified "fishy" prompt
-# https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme
-_fishy_collapsed_wd() {
-  echo $(pwd | perl -pe '
-   BEGIN {
-      binmode STDIN,  ":encoding(UTF-8)";
-      binmode STDOUT, ":encoding(UTF-8)";
-   }; s|^$ENV{HOME}|~|g; s|/([^/.])[^/]*(?=/)|/$1|g; s|/\.([^/])[^/]*(?=/)|/.$1|g
-')
-}
 
-local user_color='green'; [ $UID -eq 0 ] && user_color='red'
-NEWLINE=$'\n'
-PROMPT='%{$fg[$user_color]%}$(_fishy_collapsed_wd)%{$reset_color%} ($CONDA_DEFAULT_ENV) ${NEWLINE}%(!.#.>) '
-PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
-
-local return_status="%{$fg_bold[red]%}%(?..%?)%{$reset_color%}"
-RPROMPT="${RPROMPT}"'${return_status}$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
-
-ZSH_THEME_GIT_PROMPT_PREFIX=" "
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_DIRTY=""
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg_bold[green]%}+"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[blue]%}!"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%}-"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg_bold[magenta]%}>"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[yellow]%}#"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/fhchl/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/fhchl/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/fhchl/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/home/fhchl/mambaforge/etc/profile.d/conda.sh"
+    if [ -f "/home/fhchl/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/fhchl/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/fhchl/mambaforge/bin:$PATH"
+        export PATH="/home/fhchl/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 
-if [ -f "/home/fhchl/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/home/fhchl/mambaforge/etc/profile.d/mamba.sh"
+if [ -f "/home/fhchl/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/fhchl/miniforge3/etc/profile.d/mamba.sh"
 fi
 # <<< conda initialize <<<
 
 if type conda >/dev/null 2>&1
 then
   # hide conda env in prompt
-  conda config --set changeps1 false
+  conda config --set changeps1 true
   conda config --set auto_activate_base false
 fi
-
 
 
 [ -f "/home/fhchl/.ghcup/env" ] && source "/home/fhchl/.ghcup/env" # ghcup-env
@@ -167,10 +142,17 @@ export PATH
 
 # source /home/fhchl/.config/broot/launcher/bash/br
 
+# Pixi
 export PATH=$PATH:/home/fhchl/.pixi/bin
 if type pixi >/dev/null 2>&1
 then
   eval "$(pixi completion --shell zsh)"
+fi
+
+# Direnv
+if type direnv >/dev/null 2>&1
+then
+  eval "$(direnv hook bash)"
 fi
 
 # yazi file manager
@@ -182,4 +164,3 @@ function ya() {
 	fi
 	rm -f -- "$tmp"
 }
-
