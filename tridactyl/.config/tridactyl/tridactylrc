@@ -17,7 +17,7 @@ autocmd DocStart ^http(s?)://localhost:8888/notebook mode ignore
 
 set smoothscroll true
 
-set profiledir ~/snap/firefox/common/.mozilla/firefox/im8j3kw8.default
+" set profiledir ~/snap/firefox/common/.mozilla/firefox/im8j3kw8.default
 
 " guiset_quiet tabs autohide
 " guiset_quiet navbar autohide
