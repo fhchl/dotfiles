@@ -1,2 +1,6 @@
 os:
   editPreset: 'helix'
+
+git:
+  paging:
+    pager: delta --dark --paging=never -s --true-color always --color-only
