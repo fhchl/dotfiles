@@ -13,6 +13,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/.local/zk
 export TEXMACS_PATH=~/.local/texmacs/TeXmacs
 export PATH=$TEXMACS_PATH/bin:$PATH
+export PATH=$PATH:/opt/nvim-linux64/bin
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -164,6 +165,7 @@ function ya() {
 	fi
 	rm -f -- "$tmp"
 }
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
