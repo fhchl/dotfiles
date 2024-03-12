@@ -167,3 +167,11 @@ function ya() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# https://github.com/Sonico98/yazi-prompt.sh
+YAZI_TERM=""
+if [ -n "$YAZI_LEVEL" ]; then
+	YAZI_TERM="|  Yazi terminal: "
+fi
+PS1="$PS1$YAZI_TERM"
