@@ -33,7 +33,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip zoxide fzf aliases last-working-dir pyenv poetry)
+plugins=(git pip zoxide fzf aliases last-working-dir pyenv poetry direnv)
 
 source $ZSH/oh-my-zsh.sh
 
