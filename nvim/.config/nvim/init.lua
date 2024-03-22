@@ -739,6 +739,7 @@ require('lazy').setup({
       }
     end,
   },
+  { 'mg979/vim-visual-multi' },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -760,6 +761,10 @@ require('lazy').setup({
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
+
+      -- Jump around with `f`
+      require('mini.jump').setup()
+      require('mini.jump2d').setup()
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
