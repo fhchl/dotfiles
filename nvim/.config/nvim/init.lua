@@ -762,6 +762,10 @@ require('lazy').setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      local minifiles = require 'mini.files'
+      minifiles.setup()
+      vim.keymap.set('n', '<leader>f', minifiles.open, { desc = '[F]ile Explorer' })
+
       -- Jump around with `f`
       require('mini.jump').setup()
       require('mini.jump2d').setup()
