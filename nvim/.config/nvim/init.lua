@@ -163,6 +163,63 @@ require('lazy').setup({
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      on_attach = function(bufnr)
+        local gs = package.loaded.gitsigns
+        gs.refresh()
+
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
+        -- Navigation
+        map('n', ']h', function()
+          if vim.wo.diff then
+            return ']h'
+          end
+          vim.schedule(function()
+            gs.next_hunk()
+          end)
+          return '<Ignore>'
+        end, { expr = true, desc = 'Next Git [H]unk' })
+
+        map('n', '[h', function()
+          if vim.wo.diff then
+            return '[h'
+          end
+          vim.schedule(function()
+            gs.prev_hunk()
+          end)
+          return '<Ignore>'
+        end, { expr = true, desc = 'Previous Git [H]unk' })
+
+        -- Actions
+        map('n', '<leader>gs', gs.stage_hunk, { desc = '[S]tage Hunk' })
+        map('v', '<leader>gs', function()
+          gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+        end, { desc = '[S]tage Hunk' })
+        map('n', '<leader>gr', gs.reset_hunk, { desc = '[R]eset Hunk' })
+        map('v', '<leader>gr', function()
+          gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+        end, { desc = '[R]eset Hunk' })
+        map('n', '<leader>gS', gs.stage_buffer, { desc = '[S]tage Buffer' })
+        map('n', '<leader>gu', gs.undo_stage_hunk, { desc = '[U]ndo Stage Hunk' })
+        map('n', '<leader>gR', gs.reset_buffer, { desc = '[R]eset Buffer' })
+        map('n', '<leader>gp', gs.preview_hunk, { desc = '[P]review Hunk' })
+        map('n', '<leader>gb', function()
+          gs.blame_line { full = true }
+        end, { desc = '[B]lame' })
+        map('n', '<leader>gB', gs.toggle_current_line_blame, { desc = 'Toggle Current Line [B]lame' })
+        map('n', '<leader>gd', gs.diffthis, { desc = '[D]iff Against Index' })
+        map('n', '<leader>gD', function()
+          gs.diffthis '~'
+        end, { desc = '[D]iff Against ~' })
+        map('n', '<leader>gt', gs.toggle_deleted, { desc = '[T]oggle Old Hunk Versions' })
+
+        -- Text object
+        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = '[H]unk' })
+      end,
     },
   },
 
@@ -193,6 +250,7 @@ require('lazy').setup({
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>ss'] = { name = '[S]each [S]ymbols', _ = 'which_key_ignore' },
+        ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
       }
     end,
   },
