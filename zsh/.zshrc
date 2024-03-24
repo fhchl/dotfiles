@@ -3,8 +3,8 @@ export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-export EDITOR=hx
-export SUDO_EDITOR=hx
+export EDITOR=neovim
+export SUDO_EDITOR=neovim
 export VISUAL=$EDITOR
 export ZSH=$HOME/.oh-my-zsh
 export BUP_DIR=/media/M/Backup/bup-ubuntu
