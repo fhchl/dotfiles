@@ -185,15 +185,14 @@ require('lazy').setup({
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
-
       -- Document existing key chains
       require('which-key').register {
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+        ['<leader>d'] = { name = '[D]ebug', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+        ['<leader>ss'] = { name = '[S]each [S]ymbols', _ = 'which_key_ignore' },
       }
     end,
   },
@@ -205,12 +204,7 @@ require('lazy').setup({
   --
   -- Use the `dependencies` key to specify the dependencies of a particular plugin
 
-  {
-    'karb94/neoscroll.nvim',
-    config = function()
-      require('neoscroll').setup {}
-    end,
-  },
+  { 'karb94/neoscroll.nvim', opts = {} },
 
   { 'jvgrootveld/telescope-zoxide' },
 
@@ -288,7 +282,10 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-      vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
+      vim.keymap.set('n', '<leader>sF', function()
+        builtin.find_files { hidden = true }
+      end, { desc = '[S]earch hidden [F]iles' })
+      vim.keymap.set('n', '<leader>st', builtin.builtin, { desc = '[S]earch [T]elescope Builtins' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
@@ -416,11 +413,11 @@ require('lazy').setup({
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+          map('<leader>ssd', require('telescope.builtin').lsp_document_symbols, '[S]ymbols in [D]ocument')
 
           -- Fuzzy find all the symbols in your current workspace
           --  Similar to document symbols, except searches over your whole project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('<leader>ssw', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[S]ymbols in [W]orkspace')
 
           -- Rename the variable under your cursor
           --  Most Language Servers support renaming across files, etc.
@@ -478,6 +475,8 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         pyright = {},
+        ruff = {},
+        debugpy = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -661,27 +660,14 @@ require('lazy').setup({
   },
 
   { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
     'Mofiqul/dracula.nvim',
     priority = 1000, -- make sure to load this before all the other start plugins
     init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'dracula'
-
-      -- You can configure highlights by doing something like
-      -- vim.cmd.hi 'Comment gui=none'
     end,
-    config = function()
-      require('dracula').setup {
-        italic_comment = true,
-      }
-    end,
+    opts = { italic_comment = true },
   },
+
   { 'mg979/vim-visual-multi' },
 
   -- Highlight todo, notes, etc in comments
@@ -707,7 +693,12 @@ require('lazy').setup({
 
       local minifiles = require 'mini.files'
       minifiles.setup()
-      vim.keymap.set('n', '<leader>f', minifiles.open, { desc = '[F]ile Explorer' })
+      local minifiles_toggle = function(...)
+        if not minifiles.close() then
+          minifiles.open(...)
+        end
+      end
+      vim.keymap.set('n', '<leader>f', minifiles_toggle, { desc = '[F]ile Explorer' })
 
       -- Jump around with `f`
       require('mini.jump').setup()
@@ -757,16 +748,6 @@ require('lazy').setup({
     end,
   },
 
-  -- { -- Dracula color scheme
-  --   'Mofiqul/dracula.nvim',
-  --   config = function()
-  --     require('dracula').setup {
-  --       show_end_of_buffer = true,
-  --       italic_comment = true,
-  --     }
-  --   end,
-  -- },
-
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- put them in the right spots if you want.
@@ -776,8 +757,8 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
