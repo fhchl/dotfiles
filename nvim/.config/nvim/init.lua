@@ -62,6 +62,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Recommended by Auto-Session
+vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -82,12 +85,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -136,14 +133,18 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
-  --
-  -- Use `opts = {}` to force a plugin to be loaded.
-  --
-  --  This is equivalent to:
-  --    require('Comment').setup({})
+  -- Session management
+  {
+    'rmagatti/auto-session',
+    opts = {
+      log_level = 'error',
+      auto_session_suppress_dirs = { '~/', '~/Downloads', '~/Nextcloud' },
+      auto_session_enable_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
+      session_lens = { previewer = true },
+    },
+  },
+
+  { 'direnv/direnv.vim' },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -240,7 +241,11 @@ require('lazy').setup({
 
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+    event = 'VeryLazy', -- Sets the loading event to 'VimEnter'
+    init = function()
+      vim.opt.timeout = true
+      vim.opt.timeoutlen = 100
+    end,
     config = function() -- This is the function that runs, AFTER loading
       -- Document existing key chains
       require('which-key').register {
@@ -351,6 +356,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>sz', require('telescope').extensions.zoxide.list)
+      vim.keymap.set('n', '<leader>S', require('auto-session.session-lens').search_session, { noremap = true, desc = '[S]essions' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -750,7 +756,7 @@ require('lazy').setup({
       require('mini.surround').setup()
 
       local minifiles = require 'mini.files'
-      minifiles.setup()
+      minifiles.setup { mappings = { cose = { 'q', '<Esc><Esc>' } } }
       local minifiles_toggle = function(...)
         if not minifiles.close() then
           minifiles.open(...)
@@ -776,6 +782,7 @@ require('lazy').setup({
       statusline.section_location = function()
         return '%2l:%-2v'
       end
+      -- TODO: show session name
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
