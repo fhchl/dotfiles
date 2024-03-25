@@ -763,8 +763,8 @@ require('lazy').setup({
       require('mini.surround').setup()
 
       local minifiles = require 'mini.files'
-      minifiles.setup()
-      vim.keymap.set('n', '<leader>f', minifiles.open, { desc = '[F]ile Explorer' })
+      minifiles.setup { windows = { preview = true, width_preview = 40 } }
+      vim.keymap.set('n', '<leader>f', minifiles.open, { desc = 'File E[x]plorer' })
 
       -- Jump around with `f`
       require('mini.jump').setup()
