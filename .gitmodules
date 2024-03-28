@@ -1,3 +1,6 @@
+[submodule "zsh/.oh-my-zsh/custom/plugins/conda-zsh-completion"]
+	path = zsh/.oh-my-zsh/custom/plugins/conda-zsh-completion
+	url = https://github.com/esc/conda-zsh-completion
 [submodule "kitty/.config/kitty/kitty-themes"]
 	path = kitty/.config/kitty/kitty-themes
 	url = https://github.com/dexpota/kitty-themes.git
