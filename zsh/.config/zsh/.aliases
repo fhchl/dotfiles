@@ -1,0 +1,59 @@
+#!/bin/zsh
+#
+# .aliases - Set whatever shell aliases you want.
+#
+
+# mask built-ins with better defaults
+alias vi=vim
+
+# more ways to ls
+alias ll='ls -lhF'
+alias la='ls -lAhF'
+alias ldot='ls -ldF .*'
+
+# fix common typos
+alias quit='exit'
+alias cd..='cd ..'
+
+# tar
+alias tarls="tar -tvf"
+alias untar="tar -xf"
+
+# find
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+# url encode/decode
+alias urldecode='python3 -c "import sys, urllib.parse as ul; \
+    print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; \
+    print (ul.quote_plus(sys.argv[1]))"'
+
+# misc
+alias please=sudo
+alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
+alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
+alias zdot='cd ${ZDOTDIR:-~}'
+
+# Aliases
+alias jn='jupyter notebook'
+alias jl='jupyter lab'
+alias jc='jupyter notebook \
+  --NotebookApp.allow_origin='https://colab.research.google.com' \
+  --port=8888 \
+  --NotebookApp.port_retries=0'
+alias rr='ranger'
+alias nv='nvim'
+
+# open as on mac
+alias open='xdg-open &>/dev/null'
+
+# conda environment
+alias ea='conda activate'
+alias ed='conda deactivate'
+alias el='conda env list'
+
+alias dotfiles='cd ~/dotfiles'
+alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=30:outfmt=yuy2'
+# for tlmgr
+alias psudo='sudo env PATH="$PATH"'
