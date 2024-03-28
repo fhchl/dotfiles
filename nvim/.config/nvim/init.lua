@@ -757,7 +757,7 @@ require('lazy').setup({
 
       -- File explorer
       local minifiles = require 'mini.files'
-      minifiles.setup { mappings = { close = { 'q', '<Esc><Esc>' }, windows = {preview = true, width=preview=40} }
+      minifiles.setup ()
       local minifiles_toggle = function(...)
         if not minifiles.close() then
           minifiles.open(...)
