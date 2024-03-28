@@ -1,3 +1,4 @@
+# Envs
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -7,73 +8,25 @@ export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export VISUAL=$EDITOR
 export ZSH=$HOME/.oh-my-zsh
-export BUP_DIR=/media/M/Backup/bup-ubuntu
-export PATH=$PATH:$HOME/.cabal/bin/
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:~/.local/zk
-export TEXMACS_PATH=~/.local/texmacs/TeXmacs
-export PATH=$TEXMACS_PATH/bin:$PATH
 export PATH=$PATH:/opt/nvim-linux64/bin
+export PATH=$HOME/.local/bin:$PATH # julia
 
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"A
 
-# export PATH="/home/fhchl/miniconda3/bin:$PATH"  # commented out by conda initialize
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
-export PATH=$HOME/.local/bin:$PATH # julia
 export MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH
 
+# ZSH
 ZSH_THEME="robbyrussell"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip zoxide fzf aliases last-working-dir pyenv poetry direnv)
-
+plugins=(git pip zoxide fzf last-working-dir pyenv poetry direnv)
 source $ZSH/oh-my-zsh.sh
 
+# Conda
 # for conda-zsh-completion https://github.com/esc/conda-zsh-completion
 autoload -U compinit && compinit
-
-# Aliases
-alias jn='jupyter notebook'
-alias jl='jupyter lab'
-alias jc='jupyter notebook \
-  --NotebookApp.allow_origin='https://colab.research.google.com' \
-  --port=8888 \
-  --NotebookApp.port_retries=0'
-alias rr='ranger'
-alias nv='nvim'
-
-# open as on mac
-alias open='xdg-open &>/dev/null'
-
-# conda environment
-alias ea='conda activate'
-alias ed='conda deactivate'
-alias el='conda env list'
-
-alias checkcode='pycodestyle && pydocstyle'
-
-alias n='NNN_PLUG='p:preview-tui' nnn -a -e -P p'
-
-# classify ls and ll
-alias la='ls -laF'
-alias ll='exa -lF'
-#alias ls='exa -F'
-
-alias dotfiles='cd ~/dotfiles'
-alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=30:outfmt=yuy2'
-# for tlmgr
-alias psudo='sudo env PATH="$PATH"'
-alias sioyek='~/opt/Sioyek-x86_64.AppImage &>/dev/null & disown'
-
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -101,8 +54,6 @@ then
   conda config --set auto_activate_base false
 fi
 
-
-[ -f "/home/fhchl/.ghcup/env" ] && source "/home/fhchl/.ghcup/env" # ghcup-env
 
 # https://github.com/phiresky/ripgrep-all
 rga-fzf() {
@@ -141,15 +92,6 @@ export PATH
 
 # <<< juliaup initialize <<<
 
-# source /home/fhchl/.config/broot/launcher/bash/br
-
-# Pixi
-export PATH=$PATH:/home/fhchl/.pixi/bin
-if type pixi >/dev/null 2>&1
-then
-  eval "$(pixi completion --shell zsh)"
-fi
-
 # Direnv
 if type direnv >/dev/null 2>&1
 then
@@ -166,6 +108,7 @@ function ya() {
 	rm -f -- "$tmp"
 }
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
