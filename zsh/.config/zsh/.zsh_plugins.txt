@@ -131,7 +131,6 @@ ohmyzsh/ohmyzsh path:lib/
 ohmyzsh/ohmyzsh path:plugins/copyfile
 # Enter is git status or ls
 ohmyzsh/ohmyzsh path:plugins/magic-enter
-ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z//
 # Lots of git alises and gwip
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/fzf
@@ -177,5 +176,6 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 ###
 
 # These popular core plugins should be loaded at the end
+ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
