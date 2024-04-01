@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.python3_host_prog = '/home/fhchl/micromamba/envs/pynvim/bin/python'
+
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
@@ -144,6 +146,10 @@ require('lazy').setup({
     },
   },
 
+  -- Run python inside Neovim
+  { 'benlubas/molten-nvim' },
+
+  -- Activate env files when changing directory inside Neovim
   { 'direnv/direnv.vim' },
 
   -- "gc" to comment visual regions/lines
@@ -269,8 +275,6 @@ require('lazy').setup({
 
   { 'karb94/neoscroll.nvim', opts = {} },
 
-  { 'jvgrootveld/telescope-zoxide' },
-
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
@@ -327,7 +331,21 @@ require('lazy').setup({
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          buffers = {
+            mappings = {
+              i = {
+                ['<C-d>'] = 'delete_buffer',
+              },
+              n = {
+                ['<C-d>'] = 'delete_buffer',
+              },
+            },
+            sort_lastused = true,
+            sort_mru = true,
+            ignore_current_buffer = false,
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -362,7 +380,6 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to telescope to change theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
           previewer = false,
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
@@ -757,7 +774,7 @@ require('lazy').setup({
 
       -- File explorer
       local minifiles = require 'mini.files'
-      minifiles.setup ()
+      minifiles.setup()
       local minifiles_toggle = function(...)
         if not minifiles.close() then
           minifiles.open(...)
