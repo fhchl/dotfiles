@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -177,3 +178,5 @@ if [ -n "$YAZI_LEVEL" ]; then
 	YAZI_TERM="|  Yazi terminal: "
 fi
 PS1="$PS1$YAZI_TERM"
+
+zprof
