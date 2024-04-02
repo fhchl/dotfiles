@@ -21,3 +21,5 @@ autoload -Uz $fpath[1]/*(.:t)
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
