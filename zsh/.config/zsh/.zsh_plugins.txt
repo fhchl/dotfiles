@@ -139,7 +139,6 @@ ohmyzsh/ohmyzsh path:plugins/pip
 ohmyzsh/ohmyzsh path:plugins/pyenv
 ohmyzsh/ohmyzsh path:plugins/direnv
 ohmyzsh/ohmyzsh path:plugins/poetry
-ohmyzsh/ohmyzsh path:plugins/nvm
 
 ### Framework: zsh-utils
 #
@@ -166,6 +165,7 @@ belak/zsh-utils path:history
 
 # Syntax highlighting
 zdharma-continuum/fast-syntax-highlighting kind:defer
+lukechilds/zsh-nvm kind:defer
 
 
 ### Final Plugins
