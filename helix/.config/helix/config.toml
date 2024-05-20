@@ -14,25 +14,29 @@ select = "underline"
 hidden = false
 
 [keys.select]
-# ";" = ["keep_primary_selection", "collapse_selection"]
-# Deselect last line
-X = ["extend_line_up", "extend_to_line_bounds"]
-# Move whole selection up and down
-A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# from https://github.com/helix-editor/helix/pull/9080#issuecomment-2008964831
+J = ["select_line_below"]
+K = ["select_line_above"]
+
+"A-j" = "join_selections"
+"A-J" = "join_selections_space"
+
+X = "remove_primary_selection"
+x = "keep_selections"
+"A-x" = "remove_selections"
 
 [keys.normal]
-# Select lines upwards
-X = ["extend_line_up", "extend_to_line_bounds"]
-# Move current line up and down
-A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 # collapse multiple cursors
 esc = ["collapse_selection", "keep_primary_selection"]
-"S-tab" = "jump_backward"
-H = "goto_previous_buffer"
-L = "goto_next_buffer"
 
+J = ["select_line_below"]
+K = ["select_line_above"]
+"A-j" = "join_selections"
+"A-J" = "join_selections_space"
+
+X = "remove_primary_selection"
+x = "keep_selections"
+"A-x" = "remove_selections"
 
 [keys.normal.space]
 l = ":toggle lsp.display-inlay-hints"
