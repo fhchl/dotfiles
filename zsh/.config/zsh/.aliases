@@ -55,6 +55,8 @@ alias ed='conda deactivate'
 alias el='conda env list'
 
 alias dotfiles='cd ~/dotfiles'
-alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=30:outfmt=yuy2'
+#alias mirror='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:fps=30:outfmt=yuy2'
+# Following works on T14s with Brio
+alias mirror='(&>/dev/null mplayer tv:// -tv device=/dev/video4 -vf eq=1:-1 &)'
 # for tlmgr
 alias psudo='sudo env PATH="$PATH"'
