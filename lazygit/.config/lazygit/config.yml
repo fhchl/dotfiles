@@ -1,6 +1,7 @@
 os:
-  editPreset: 'nvim'
+  editPreset: 'hx'
 
 git:
   paging:
-    pager: delta --dark --paging=never -s --true-color always --color-only
+    # pager: delta --dark --paging=never -s --true-color always --color-only
+    externalDiffCommand: difft --color=always --display=inline
