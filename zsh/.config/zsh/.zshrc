@@ -3,6 +3,10 @@
 # .zshrc - Zsh file loaded on interactive shell sessions.
 #
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Zsh options.
 setopt extended_glob
 
