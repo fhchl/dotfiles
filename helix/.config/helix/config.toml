@@ -46,4 +46,3 @@ x = "keep_selections"
 
 [keys.normal.space]
 l = ":toggle lsp.display-inlay-hints"
-c = ":buffer-close"
