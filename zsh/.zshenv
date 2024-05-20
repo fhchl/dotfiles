@@ -8,9 +8,9 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
 export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
 
-export EDITOR="${EDITOR:-nvim}"
-export VISUAL="${VISUAL:-nvim}"
-export SUDO_EDITOR=nvim
+export EDITOR="${EDITOR:-hx}"
+export VISUAL="${VISUAL:-hx}"
+export SUDO_EDITOR=hx
 export PAGER="${PAGER:-less}"
 
 # You can use .zprofile to set environment vars for non-login, non-interactive shells.
