@@ -7,7 +7,7 @@ wm.gaps.smart: inverse_outer
 
 gtk.font_name: Iosevka Aile 12
 gtk.monospace_font_name: Iosevka Term Extended
-gnome.terminal.font: Iosevka Term Extended
+gnome.terminal.font: Iosevka Nerd Font 12
 wm.font: Iosevka Aile
 
 regolith.look.path: /usr/share/regolith-look/dracula
