@@ -1,0 +1,1 @@
+bindsym $mod+grave [urgent=latest] focus
