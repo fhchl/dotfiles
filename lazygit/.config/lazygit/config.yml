@@ -1,5 +1,5 @@
 os:
-  editPreset: 'hx'
+  editPreset: 'helix (hx)'
 
 git:
   paging:
