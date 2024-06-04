@@ -1,3 +1,6 @@
+[user]
+	name = fhchl
+	mail = "no@noreply.mail.com"
 [includeIf "gitdir:~/git-work/"]
 	path = ~/.work.gitconfig
 [includeIf "gitdir:~/git-personal/"]
@@ -31,3 +34,5 @@
 [pager]
         difftool = true		
 #### End difftastic
+[init]
+	defaultBranch = main
