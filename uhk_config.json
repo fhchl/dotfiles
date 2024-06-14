@@ -2,7 +2,7 @@
   "userConfigMajorVersion": 7,
   "userConfigMinorVersion": 1,
   "userConfigPatchVersion": 0,
-  "deviceName": "My UHK",
+  "deviceName": "fhchl's UHK",
   "doubleTapSwitchLayerTimeout": 250,
   "iconsAndLayerTextsBrightness": 128,
   "alphanumericSegmentsBrightness": 128,
@@ -107,7 +107,7 @@
       "navigationModeFn3Layer": "Cursor",
       "navigationModeFn4Layer": "Cursor",
       "navigationModeFn5Layer": "Cursor",
-      "speed": 0.7,
+      "speed": 0.699999988079071,
       "baseSpeed": 0.5,
       "xceleration": 1,
       "scrollSpeedDivisor": 8,
@@ -6145,9 +6145,7 @@
                   "r": 255
                 },
                 {
-                  "keyActionType": "keystroke",
-                  "type": "media",
-                  "scancode": 233,
+                  "keyActionType": "none",
                   "b": 255,
                   "g": 255,
                   "r": 255
@@ -6193,7 +6191,7 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "media",
-                  "scancode": 182,
+                  "scancode": 234,
                   "b": 255,
                   "g": 255,
                   "r": 255
@@ -6201,7 +6199,7 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "media",
-                  "scancode": 234,
+                  "scancode": 233,
                   "b": 255,
                   "g": 255,
                   "r": 255
@@ -6233,13 +6231,9 @@
                   "r": 255
                 },
                 {
-                  "keyActionType": "none",
-                  "b": 255,
-                  "g": 255,
-                  "r": 255
-                },
-                {
-                  "keyActionType": "none",
+                  "keyActionType": "keystroke",
+                  "type": "media",
+                  "scancode": 182,
                   "b": 255,
                   "g": 255,
                   "r": 255
@@ -6254,6 +6248,12 @@
                   "keyActionType": "keystroke",
                   "type": "media",
                   "scancode": 226,
+                  "b": 255,
+                  "g": 255,
+                  "r": 255
+                },
+                {
+                  "keyActionType": "none",
                   "b": 255,
                   "g": 255,
                   "r": 255
