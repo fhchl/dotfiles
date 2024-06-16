@@ -1,6 +1,6 @@
 [user]
 	name = fhchl
-	mail = "no@noreply.mail.com"
+	email = "no@noreply.mail.com"
 [includeIf "gitdir:~/dotfiles"]
 	path = ~/.personal.gitconfig
 [includeIf "gitdir:~/git-work/"]
