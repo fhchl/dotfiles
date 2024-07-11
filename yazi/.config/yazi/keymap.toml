@@ -28,3 +28,8 @@ on   = [ "<C-s>" ]
 run = 'shell "$SHELL" --block --confirm'
 desc = "Open shell here"
 
+# https://yazi-rs.github.io/docs/tips#smart-paste
+[[manager.prepend_keymap]]
+on = [ "l" ]
+run = "plugin --sync smart-enter"
+desc = "Enter the child directory, or open the file"
