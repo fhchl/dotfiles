@@ -4,6 +4,8 @@ theme = "dracula"
 bufferline = "multiple"
 cursorline = true
 color-modes = true
+gutters.layout = ["diff", "diagnostics", "line-numbers", "spacer", "spacer"]
+gutters.line-numbers.min-width = 3
 
 [editor.cursor-shape]
 insert = "bar"
@@ -46,3 +48,16 @@ x = "keep_selections"
 
 [keys.normal.space]
 l = ":toggle lsp.display-inlay-hints"
+
+[keys.normal."["]
+"[" = "goto_previous_buffer"
+
+[keys.normal."]"]
+"]" = "goto_next_buffer" 
+
+[editor.lsp]
+auto-signature-help = true
+
+[editor.statusline]
+left = ["mode", "spacer", "diagnostics", "workspace-diagnostics", "spinner"]
+right = ["file-name", "spacer", "position-percentage", "spacer"]
