@@ -27,3 +27,4 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /home/fhchl/.config/broot/launcher/bash/br
