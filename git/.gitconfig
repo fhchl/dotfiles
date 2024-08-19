@@ -38,3 +38,8 @@
 #### End difftastic
 [init]
 	defaultBranch = main
+[rebase]
+	# Automatically stash and pop when rebasing
+	autoStash = true
+	# Update child refs with parent ref
+    updateRefs = true
