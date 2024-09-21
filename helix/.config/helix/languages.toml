@@ -1,5 +1,6 @@
-[language-server.ruff-lsp]
-command = "ruff-lsp"
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 
 
 [[language]]
@@ -8,8 +9,8 @@ scope = "source.python"
 auto-format = false
 rulers = [88]
 language-servers = [
-  "ruff-lsp", 
-  { name = "pyright", except-features = ["format"] }
+  { name = "pyright", except-features = ["format"] },
+  "ruff"
 ]
 
 [[language]]
