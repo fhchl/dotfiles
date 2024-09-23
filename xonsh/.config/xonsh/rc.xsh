@@ -9,6 +9,7 @@ xontrib load coreutils
 xontrib load prompt_starship
 xontrib load sh
 xontrib load fzf-completions
+xontrib load direnv
 
 XSH.env['fzf_history_binding'] = "c-r"  # Ctrl+R
 XSH.env['fzf_ssh_binding'] = "c-s"  # Ctrl+S
