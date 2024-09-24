@@ -4,6 +4,7 @@ from xonsh.built_ins import XSH
 # $XONSH_SHOW_TRACEBACK = True
 $XONTRIB_SH_SHELLS = ['bash', 'sh']
 $STARSHIP_CONFIG = '~/.config/xonsh/starship.toml'
+$PATH.prepend('~/.local/bin/')
 
 xontrib load coreutils
 xontrib load prompt_starship
