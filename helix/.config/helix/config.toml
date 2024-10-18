@@ -46,8 +46,11 @@ X = "remove_primary_selection"
 x = "keep_selections"
 "A-x" = "remove_selections"
 
+"*" = ["move_prev_word_start", "move_next_word_end", "search_selection"]
+
 [keys.normal.space]
 l = ":toggle lsp.display-inlay-hints"
+x = ":toggle whitespace.render all none"
 
 [keys.normal."["]
 "[" = "goto_previous_buffer"
@@ -61,3 +64,5 @@ auto-signature-help = true
 [editor.statusline]
 left = ["mode", "spacer", "diagnostics", "workspace-diagnostics", "spinner"]
 right = ["file-name", "spacer", "position-percentage", "spacer"]
+
+
