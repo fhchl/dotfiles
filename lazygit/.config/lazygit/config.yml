@@ -1,6 +1,8 @@
 os:
   editPreset: 'helix (hx)'
 
+promptToReturnFromSubprocess: false
+
 git:
   paging:
     # pager: delta --dark --paging=never -s --true-color always --color-only
