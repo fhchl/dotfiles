@@ -9,7 +9,6 @@ $PATH.prepend('~/.pyenv/bin')
 $PATH.prepend('~/.cargo/bin')
 
 $EDITOR = "hx"
-$VISUAL = "code"
 
 xontrib load coreutils
 xontrib load prompt_starship
