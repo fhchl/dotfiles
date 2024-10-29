@@ -48,6 +48,8 @@ x = "keep_selections"
 
 "*" = ["move_prev_word_start", "move_next_word_end", "search_selection"]
 
+C-q = ":buffer-close"
+
 [keys.normal.space]
 l = ":toggle lsp.display-inlay-hints"
 x = ":toggle whitespace.render all none"
