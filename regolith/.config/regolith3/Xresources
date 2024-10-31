@@ -10,3 +10,6 @@ gnome.terminal.font: Iosevka Nerd Font 12
 wm.font: Iosevka Aile
 
 regolith.look.path: /usr/share/regolith-look/dracula
+
+wm.bar.mode: hide
+wm.bar.status_config: ~/.config/regolith3/i3status-rust/config.toml
