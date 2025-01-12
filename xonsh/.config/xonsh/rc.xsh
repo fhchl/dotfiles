@@ -27,7 +27,7 @@ aliases["lg"] = "lazygit"
 
 execx($(zoxide init xonsh), 'exec', __xonsh__.ctx, filename='zoxide')
 
-def yazi_with_cd():
+def y():
     tmp = $(mktemp -t "yazi-cwd.XXXXXX")
     $[yazi @(f"--cwd-file={tmp}")]
     with open(tmp) as f:
@@ -36,4 +36,4 @@ def yazi_with_cd():
         cd @(cwd)
     rm -f -- @(tmp)
 
-aliases["y"] = yazi_with_cd
+aliases["y"] = y
