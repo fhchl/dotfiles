@@ -7,6 +7,7 @@ $STARSHIP_CONFIG = '~/.config/xonsh/starship.toml'
 $PATH.prepend('~/.local/bin')
 $PATH.prepend('~/.pyenv/bin')
 $PATH.prepend('~/.cargo/bin')
+$PATH.prepend('~/.local/zig')
 
 $EDITOR = "hx"
 
