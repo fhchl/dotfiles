@@ -1146,3 +1146,9 @@ c.InteractiveShellApp.extensions = [
 #          when IPython starts.
 #  Default: False
 # c.StoreMagics.autorestore = False
+
+try:
+    from IPython.core import ultratb
+    ultratb.VerboseTB.tb_highlight = 'bg:ansired'
+except Exception:
+    print("Error patching bg color for tracebacks.")
