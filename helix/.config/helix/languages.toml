@@ -2,6 +2,9 @@
 command = "ruff"
 args = ["server"]
 
+[language-server.basedpyright.config]
+basedpyright.analysis.typeCheckingMode = "basic"
+
 
 [[language]]
 name = "python"
@@ -9,7 +12,7 @@ scope = "source.python"
 auto-format = false
 rulers = [88]
 language-servers = [
-  { name = "pyright", except-features = ["format"] },
+  { name = "basedpyright", except-features = ["format"] },
   "ruff"
 ]
 
