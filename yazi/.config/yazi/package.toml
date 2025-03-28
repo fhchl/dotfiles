@@ -1,0 +1,17 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "2730199"
+hash = "e0d2c8d7e7afe5b82270367098d1a821"
+
+[[plugin.deps]]
+use = "AnirudhG07/nbpreview"
+rev = "f8879b3"
+hash = "d378328e5d0a1b9fb9f04ab3aade4575"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "9f924e3"
+hash = "2b0c33928986f126d5c5a4cac31a6b46"
+
+[flavor]
+deps = []
