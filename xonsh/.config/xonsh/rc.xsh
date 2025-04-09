@@ -6,18 +6,8 @@ from os import path
 # $XONSH_SHOW_TRACEBACK = True
 $XONTRIB_SH_SHELLS = ['bash', 'sh']
 $STARSHIP_CONFIG = '~/.config/xonsh/starship.toml'
-
-$user_bins = [
-    f'{$HOME}/.cargo/bin',
-    f'{$HOME}/.pyenv/bin',
-    f'{$HOME}/.poetry/bin',
-    f'{$HOME}/.local/bin', 
-    f'{$HOME}/Miniconda3/bin',
-]
-
-for dir in $user_bins:
-    if path.isdir(dir) and path.exists(dir):
-        $PATH.add(dir,front=True, replace=True)
+$PATH.prepend('~/.local/bin')
+$PATH.prepend('~/.cargo/bin')
 
 $EDITOR = "hx"
 
@@ -26,7 +16,6 @@ xontrib load prompt_starship
 xontrib load sh
 xontrib load fzf-completions
 xontrib load direnv
-# xontrib load pyenv
 
 XSH.env['fzf_history_binding'] = "c-r"  # Ctrl+R
 XSH.env['fzf_ssh_binding'] = "c-s"  # Ctrl+S
