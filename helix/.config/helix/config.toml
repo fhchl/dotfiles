@@ -57,24 +57,24 @@ C-g = [
     ":redraw",
     ":reload-all"
 ]
-
-[keys.normal.space]
-l = ":toggle lsp.display-inlay-hints"
-x = ":toggle whitespace.render all none"
-e = [
+C-e = [
   ":sh rm -f /tmp/unique-file-h21a434",
   ":insert-output yazi '%{buffer_name}' --chooser-file=/tmp/unique-file-h21a434",
   ":insert-output echo \"x1b[?1049h\" > /dev/tty",
   ":open %sh{cat /tmp/unique-file-h21a434}",
   ":redraw",
 ]
-E = [
+C-E = [
   ":sh rm -f /tmp/unique-file-u41ae14",
   ":insert-output yazi '%{workspace_directory}' --chooser-file=/tmp/unique-file-u41ae14",
   ":insert-output echo \"x1b[?1049h\" > /dev/tty",
   ":open %sh{cat /tmp/unique-file-u41ae14}",
   ":redraw",
 ]
+
+[keys.normal.space]
+l = ":toggle lsp.display-inlay-hints"
+x = ":toggle whitespace.render all none"
 
 [keys.normal."["]
 "[" = "goto_previous_buffer"
