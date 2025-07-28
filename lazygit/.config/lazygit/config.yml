@@ -7,3 +7,6 @@ git:
   paging:
     # pager: delta --dark --paging=never -s --true-color always --color-only
     externalDiffCommand: difft --color=always --display=side-by-side
+
+theme:
+  nerdFontsversion: 3
