@@ -76,10 +76,6 @@ C-e = [
 l = ":toggle lsp.display-inlay-hints"
 x = ":toggle whitespace.render all none"
 
-[keys.normal.space]
-l = ":toggle lsp.display-inlay-hints"
-x = ":toggle whitespace.render all none"
-
 [keys.normal."["]
 "[" = "goto_previous_buffer"
 
