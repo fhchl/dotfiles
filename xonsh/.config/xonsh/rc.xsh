@@ -1,3 +1,6 @@
+# install with
+# uv tool install -p 3.13 --with xontrib-fzf-completions --with xontrib-sh --with xontrib-prompt-starship --with xonsh-direnv --with prompt-toolkit xonsh
+
 from xonsh.built_ins import XSH
 import os.path
 from os import path
